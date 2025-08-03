@@ -380,6 +380,366 @@
       opacity: 1;
       transform: translateY(0);
     }
+
+    /* NEW SOCIAL MEDIA SECTION STYLES */
+    .social-contact-section {
+      padding: 80px 20px;
+      max-width: 1200px;
+      margin: auto;
+      position: relative;
+      background: linear-gradient(135deg, rgba(255,107,107,0.05), rgba(255,159,243,0.05));
+      backdrop-filter: blur(15px);
+      margin-bottom: 20px;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+      text-align: center;
+      border: 1px solid rgba(255,107,107,0.1);
+      overflow: hidden;
+    }
+
+    .social-contact-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 30% 20%, rgba(255,107,107,0.1), transparent 50%),
+                  radial-gradient(circle at 80% 80%, rgba(255,159,243,0.1), transparent 50%);
+      pointer-events: none;
+    }
+
+    .social-contact-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      background: linear-gradient(45deg, #667eea, #764ba2, #ff6b6b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      position: relative;
+      z-index: 2;
+      animation: textShimmer 3s ease-in-out infinite;
+    }
+
+    @keyframes textShimmer {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
+    .social-contact-section h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(45deg, #ff6b6b, #ff9ff3);
+      border-radius: 2px;
+      box-shadow: 0 2px 10px rgba(255,107,107,0.3);
+    }
+
+    .section-subtitle {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.1rem;
+      color: #888;
+      margin-bottom: 3rem;
+      font-weight: 300;
+      letter-spacing: 1px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .social-contact-container {
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .social-media-section {
+      width: 100%;
+      max-width: 600px;
+      position: relative;
+    }
+
+    .social-media-section::before {
+      content: '';
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(45deg, #ff6b6b, #ff9ff3);
+      border-radius: 50%;
+      opacity: 0.1;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.1; }
+      50% { transform: translateX(-50%) scale(1.2); opacity: 0.3; }
+    }
+
+    .social-media-section h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 2.5rem;
+      background: linear-gradient(45deg, #333, #666);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: 0.5px;
+      position: relative;
+    }
+
+    .social-media-section h3::before {
+      content: '✨';
+      position: absolute;
+      left: -35px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.5rem;
+      animation: sparkle 2s ease-in-out infinite;
+    }
+
+    .social-media-section h3::after {
+      content: '✨';
+      position: absolute;
+      right: -35px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.5rem;
+      animation: sparkle 2s ease-in-out infinite reverse;
+    }
+
+    @keyframes sparkle {
+      0%, 100% { opacity: 0.5; transform: translateY(-50%) scale(1); }
+      50% { opacity: 1; transform: translateY(-50%) scale(1.2); }
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-bottom: 30px;
+    }
+
+    .social-icon {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      padding: 20px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.9);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .social-icon::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 20px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: -1;
+    }
+
+    .facebook-icon::before {
+      background: linear-gradient(135deg, #1877f2, #42a5f5);
+    }
+
+    .instagram-icon::before {
+      background: linear-gradient(135deg, #e4405f, #f77737, #fcaf45);
+    }
+
+    .social-icon:hover::before {
+      opacity: 1;
+    }
+
+    .social-icon:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+
+    .social-icon:hover .social-icon-circle,
+    .social-icon:hover .social-label {
+      color: white;
+    }
+
+    .social-icon-circle {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 10px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .facebook-icon .social-icon-circle {
+      background: linear-gradient(135deg, #1877f2, #42a5f5);
+    }
+
+    .instagram-icon .social-icon-circle {
+      background: linear-gradient(135deg, #e4405f, #f77737, #fcaf45);
+    }
+
+    .social-icon svg {
+      width: 30px;
+      height: 30px;
+      fill: white;
+      transition: transform 0.3s ease;
+    }
+
+    .social-icon:hover svg {
+      transform: scale(1.1);
+    }
+
+    .social-label {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #666;
+      transition: color 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .phone-section {
+      width: 100%;
+      padding: 30px;
+      background: linear-gradient(135deg, rgba(255,107,107,0.1), rgba(255,159,243,0.1));
+      border-radius: 20px;
+      border: 1px solid rgba(255,107,107,0.2);
+    }
+
+    .phone-section h3 {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+      color: #666;
+      letter-spacing: 0.5px;
+    }
+
+    .phone-contact {
+      display: flex;
+      justify-content: center;
+    }
+
+    .phone-number {
+      display: inline-flex;
+      align-items: center;
+      gap: 15px;
+      background: linear-gradient(45deg, #ff6b6b, #ff9ff3);
+      color: white;
+      padding: 20px 40px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: 600;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 8px 25px rgba(255,107,107,0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .phone-number::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition: left 0.6s ease;
+    }
+
+    .phone-number:hover::before {
+      left: 100%;
+    }
+
+    .phone-number:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(255,107,107,0.4);
+    }
+
+    .phone-icon {
+      width: 22px;
+      height: 22px;
+      fill: white;
+    }
+
+    /* Responsive design for new section */
+    @media (max-width: 768px) {
+      .social-contact-section h2 {
+        font-size: 2.2rem;
+      }
+
+      .social-contact-container {
+        gap: 40px;
+      }
+
+      .social-icons {
+        gap: 25px;
+      }
+
+      .social-icon {
+        padding: 15px;
+      }
+
+      .social-icon-circle {
+        width: 50px;
+        height: 50px;
+      }
+
+      .social-icon svg {
+        width: 24px;
+        height: 24px;
+      }
+
+      .phone-number {
+        font-size: 1.1rem;
+        padding: 18px 30px;
+      }
+
+      .social-contact-section {
+        padding: 60px 15px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .social-icons {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .social-icon {
+        width: 200px;
+        margin: 0 auto;
+      }
+
+      .phone-number {
+        font-size: 1rem;
+        padding: 15px 25px;
+        gap: 10px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -412,6 +772,46 @@
       </div>
       <div class="gallery-item">
         <img src="img4.jpg" alt="Wedding Photo 4">
+      </div>
+    </div>
+  </section>
+
+  <section class="social-contact-section animate-on-scroll">
+    <h2>Stay Connected</h2>
+    <p class="section-subtitle">Let's capture your story together</p>
+    <div class="social-contact-container">
+      <div class="social-media-section">
+        <h3>Join Our Community</h3>
+        <div class="social-icons">
+          <a href="https://facebook.com/beercapture" class="social-icon facebook-icon" target="_blank" aria-label="Follow us on Facebook">
+            <div class="social-icon-circle">
+              <svg viewBox="0 0 24 24">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+            </div>
+            <span class="social-label">Facebook</span>
+          </a>
+          <a href="https://instagram.com/beercapture" class="social-icon instagram-icon" target="_blank" aria-label="Follow us on Instagram">
+            <div class="social-icon-circle">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </div>
+            <span class="social-label">Instagram</span>
+          </a>
+        </div>
+      </div>
+      
+      <div class="phone-section">
+        <h3>Call us:</h3>
+        <div class="phone-contact">
+          <a href="tel:+919876543210" class="phone-number">
+            <svg class="phone-icon" viewBox="0 0 24 24">
+              <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+            </svg>
+            +91 98765 43210
+          </a>
+        </div>
       </div>
     </div>
   </section>
